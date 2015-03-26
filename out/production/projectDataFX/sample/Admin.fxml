@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="968.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerAdmin">
+   <children>
+      <SplitPane dividerPositions="0.10584958217270195" layoutX="183.0" layoutY="8.0" orientation="VERTICAL" prefHeight="720.0" prefWidth="968.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #076185;">
+               <children>
+                  <Label layoutX="387.0" layoutY="17.0" text="Blijdorp Admin" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="logOut" fitHeight="54.0" fitWidth="57.0" layoutX="886.0" layoutY="10.0">
+                     <image>
+                        <Image url="@../X.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TextField fx:id="firstField" layoutX="409.0" layoutY="166.0" />
+                  <TextField fx:id="familyField" layoutX="410.0" layoutY="235.0" />
+                  <TextField fx:id="userField" layoutX="411.0" layoutY="307.0" />
+                  <PasswordField fx:id="passField" layoutX="411.0" layoutY="376.0" />
+                  <Label layoutX="456.0" layoutY="140.0" text="First name" />
+                  <Label layoutX="452.0" layoutY="212.0" text="Family name" />
+                  <Label layoutX="455.0" layoutY="282.0" text="User name" />
+                  <Label layoutX="458.0" layoutY="351.0" text="Password" />
+                  <Button fx:id="btnAddAcc" layoutX="446.0" layoutY="466.0" mnemonicParsing="false" style="-fx-background-color: #076185;" text="Add Account" textFill="WHITE" />
+                  <RadioButton fx:id="adminCheck" layoutX="458.0" layoutY="411.0" mnemonicParsing="false" text="Admin" />
+                  <RadioButton fx:id="analystCheck" layoutX="458.0" layoutY="439.0" mnemonicParsing="false" text="Analyst" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
