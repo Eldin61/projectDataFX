@@ -114,6 +114,20 @@ public class SQLconnector {
             e.printStackTrace();
         }
     }
+    public void getPopMess(){
+        try {
+            Class.forName(jdbcDriver);
+            conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
+            Statement statement = conn.createStatement();
+            String sql = "SELECT username, dateAdded, message, sentiment, followers, favourites FROM messages, twitter WHERE messages.ID=twitter.ID ORDER BY followers DESC";
+            rs = statement.executeQuery(sql);
+            while (rs.next()) {
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     /**public void testMethod(){
         try {

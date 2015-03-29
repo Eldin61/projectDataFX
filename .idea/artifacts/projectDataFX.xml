@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="projectDataFX">
+    <output-path>$PROJECT_DIR$/out/artifacts/projectDataFX</output-path>
+    <root id="root">
+      <element id="archive" name="projectDataFX.jar">
+        <element id="module-output" name="projectDataFX" />
+      </element>
+    </root>
+  </artifact>
+</component>

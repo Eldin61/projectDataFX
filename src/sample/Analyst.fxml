@@ -19,7 +19,7 @@
                         <Font name="System Bold" size="26.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="logOut" fitHeight="58.0" fitWidth="63.0" layoutX="1023.0">
+                  <ImageView fx:id="logOut" fitHeight="58.0" fitWidth="66.0" layoutX="1014.0">
                      <image>
                         <Image url="@../X.png" />
                      </image>
@@ -41,7 +41,7 @@
                                                 <Font size="27.0" />
                                              </font>
                                           </Label>
-                                          <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="454.0" layoutY="264.0">
+                                          <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="447.0" layoutY="255.0">
                                              <image>
                                                 <Image url="@../blijdorp.png" />
                                              </image>
@@ -77,7 +77,20 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <PieChart fx:id="pieChart" title="Attitude" />
+                                          <PieChart fx:id="pieChart" layoutX="-12.0" layoutY="128.0" title="Attitude" />
+                                          <Button fx:id="btnRefresh" layoutX="210.0" layoutY="580.0" mnemonicParsing="false" style="-fx-background-color: #3DA7D1;" text="Refresh" textFill="WHITE" />
+                                          <TextArea layoutX="488.0" layoutY="79.0" prefHeight="232.0" prefWidth="534.0" />
+                                          <TextArea layoutX="493.0" layoutY="414.0" prefHeight="228.0" prefWidth="538.0" />
+                                          <Label layoutX="592.0" layoutY="27.0" text="Most popular positive messages">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="595.0" layoutY="347.0" text="Most popular negative messages">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Label>
                                        </children></AnchorPane>
                                 </content>
                               </Tab>

@@ -1,8 +1,12 @@
 package sample;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
+import com.mysql.jdbc.Statement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -43,14 +47,27 @@ public class ControllerAnalyst {
     private TextField fResult;
     @FXML
     private PieChart pieChart;
+    @FXML
+    private Button btnRefresh;
 
     @FXML
     void initialize() {
         logOut();
         streamMessage();
         addData();
+        getSentiment();
         pieChart.setData(getChart());
+        refreshChart();
     }
+    int sentimentP;
+    int sentimentN;
+    ResultSet rs;
+    String dbURL = "jdbc:mysql://localhost:3306/projectData";
+    String dbUser = "root";
+    String dbPassWord = "root";
+    String jdbcDriver = "com.mysql.jdbc.Driver";
+    Connection conn = null;
+
     private void logOut(){
         logOut.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -135,7 +152,7 @@ public class ControllerAnalyst {
     }
     private void addData() {
 
-        SQLconnector s = new SQLconnector();
+        final SQLconnector s = new SQLconnector();
 
         btnAdd.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -195,10 +212,57 @@ public class ControllerAnalyst {
             }
         });
     }
+    private void getSentiment(){
+        try {
+            Class.forName(jdbcDriver);
+            conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
+            Statement statement = (Statement) conn.createStatement();
+
+            String sql = "SELECT sentiment, COUNT(ID) AS numberOfTweets FROM messages GROUP BY sentiment";
+
+            rs = statement.executeQuery(sql);
+            while(rs.next()){
+                String tweetsT = rs.getString("sentiment") + ": " + rs.getString("numberOfTweets");
+                if(tweetsT.contains("negative")){
+                    tweetsT = tweetsT.replaceAll("[^0-9]", "");
+                    sentimentN = Integer.parseInt(tweetsT);
+                }
+                if(tweetsT.contains("positive")){
+                    tweetsT = tweetsT.replaceAll("[^0-9]", "");
+                    sentimentP = Integer.parseInt(tweetsT);
+                }
+            }
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     private ObservableList<PieChart.Data> getChart() {
         ObservableList<PieChart.Data> list = FXCollections.observableArrayList();
-        list.addAll(new PieChart.Data("java",20), new PieChart.Data("c",20),
-                new PieChart.Data("C++",20));
+        list.addAll(new PieChart.Data("Negative",sentimentN), new PieChart.Data("Positive",sentimentP));
         return list;
+    }
+    private void refreshChart(){
+        btnRefresh.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                getSentiment();
+                pieChart.setData(getChart());
+            }
+        });
+    }
+    private void getPopMess(){
+        try {
+            Class.forName(jdbcDriver);
+            conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
+            java.sql.Statement statement = conn.createStatement();
+            String sql = "SELECT username, dateAdded, message, sentiment, followers, favourites FROM messages, twitter WHERE messages.ID=twitter.ID ORDER BY followers DESC";
+            rs = statement.executeQuery(sql);
+            while (rs.next()) {
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
