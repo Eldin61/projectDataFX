@@ -79,8 +79,8 @@
                                        <children>
                                           <PieChart fx:id="pieChart" layoutX="-12.0" layoutY="128.0" title="Attitude" />
                                           <Button fx:id="btnRefresh" layoutX="210.0" layoutY="580.0" mnemonicParsing="false" style="-fx-background-color: #3DA7D1;" text="Refresh" textFill="WHITE" />
-                                          <TextArea layoutX="488.0" layoutY="79.0" prefHeight="232.0" prefWidth="534.0" />
-                                          <TextArea layoutX="493.0" layoutY="414.0" prefHeight="228.0" prefWidth="538.0" />
+                                          <TextArea fx:id="posArea" layoutX="488.0" layoutY="79.0" prefHeight="232.0" prefWidth="534.0" />
+                                          <TextArea fx:id="negArea" layoutX="493.0" layoutY="414.0" prefHeight="228.0" prefWidth="538.0" />
                                           <Label layoutX="592.0" layoutY="27.0" text="Most popular positive messages">
                                              <font>
                                                 <Font size="23.0" />

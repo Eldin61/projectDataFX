@@ -49,6 +49,10 @@ public class ControllerAnalyst {
     private PieChart pieChart;
     @FXML
     private Button btnRefresh;
+    @FXML
+    private TextArea posArea;
+    @FXML
+    private TextArea negArea;
 
     @FXML
     void initialize() {
@@ -58,10 +62,21 @@ public class ControllerAnalyst {
         getSentiment();
         pieChart.setData(getChart());
         refreshChart();
+        getPopMess();
     }
     int sentimentP;
     int sentimentN;
     ResultSet rs;
+    String incMess;
+    String username;
+    int follower;
+    int fav;
+    int retweets;
+    String messagesTot;
+    String sentiment;
+    String posMess;
+    String negMess;
+
     String dbURL = "jdbc:mysql://localhost:3306/projectData";
     String dbUser = "root";
     String dbPassWord = "root";
@@ -252,13 +267,32 @@ public class ControllerAnalyst {
         });
     }
     private void getPopMess(){
+        posArea.setEditable(false);
+        negArea.setEditable(false);
         try {
             Class.forName(jdbcDriver);
             conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
             java.sql.Statement statement = conn.createStatement();
-            String sql = "SELECT username, dateAdded, message, sentiment, followers, favourites FROM messages, twitter WHERE messages.ID=twitter.ID ORDER BY followers DESC";
+            String sql = "SELECT username, dateAdded, message, sentiment, followers, favourites, retweets FROM messages, twitter WHERE messages.ID=twitter.ID ORDER BY followers DESC";
             rs = statement.executeQuery(sql);
             while (rs.next()) {
+                username = rs.getString("username");
+                incMess = rs.getString("message");
+                follower = rs.getInt("followers");
+                fav = rs.getInt("favourites");
+                retweets = rs.getInt("retweets");
+                sentiment = rs.getString("sentiment");
+
+                messagesTot = sentiment;
+
+                if(messagesTot.contains("positive")){
+                    posMess = "Username: " + username + "\n\rFollowers: " + follower + "\n\rRetweets: " + retweets + "\n\rFavourites: " + fav + "\n\rMessage: " + incMess + "\n\r" + "\n\r";
+                    posArea.appendText(posMess);
+                }
+                if(messagesTot.contains("negative")){
+                    negMess = "Username: " + username + "\n\rFollowers: " + follower + "\n\rRetweets: " + retweets + "\n\rFavourites: " + fav + "\n\rMessage: " + incMess + "\n\r \n\r";
+                    negArea.appendText(negMess);
+                }
 
             }
         } catch (Exception e) {
