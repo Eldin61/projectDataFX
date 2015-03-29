@@ -77,9 +77,9 @@ public class ControllerAnalyst {
     String posMess;
     String negMess;
 
-    String dbURL = "jdbc:mysql://localhost:3306/projectData";
-    String dbUser = "root";
-    String dbPassWord = "root";
+    String dbURL = "jdbc:mysql://sql3.freemysqlhosting.net:3306/sql372231";
+    String dbUser = "sql372231";
+    String dbPassWord = "qU3*rU9*";
     String jdbcDriver = "com.mysql.jdbc.Driver";
     Connection conn = null;
 
