@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - projectData@localhost" uuid="f7524475-dbfa-420d-92e3-263b8aacf8ef">
+    <database-info product="MySQL" version="5.6.22-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="projectdata"/>
+    <table name="employees" schema="" catalog="projectdata" type="TABLE">
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="voornaam" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="achternaam" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="username" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="authority" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <index name="unique_ID" unique="true" columns="ID"/>
+    </table>
+    <table name="messages" schema="" catalog="projectdata" type="TABLE">
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="username" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="dateAdded" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="message" sqlType="VARCHAR" precision="1000" scale="0" nullable="false" jdbcType="12"/>
+      <column name="geo" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sentiment" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <index name="unique_ID" unique="true" columns="ID"/>
+    </table>
+    <table name="testtable" schema="" catalog="projectdata" type="TABLE">
+      <column name="username" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="message" sqlType="VARCHAR" precision="1000" scale="0" nullable="false" jdbcType="12"/>
+      <column name="follower" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="followercount" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <index name="unique_ID" unique="true" columns="ID"/>
+    </table>
+    <table name="twitter" schema="" catalog="projectdata" type="TABLE">
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="retweets" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="favourites" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="followers" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+    </table>
+  </data-source>
+</component>
