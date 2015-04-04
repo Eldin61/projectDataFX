@@ -1,11 +1,5 @@
 package sample;
 
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.util.ResourceBundle;
-
 import com.mysql.jdbc.Statement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,6 +14,12 @@ import javafx.stage.Stage;
 import twitter4j.*;
 
 import javax.swing.*;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.util.List;
+import java.util.ResourceBundle;
 
 public class ControllerAnalyst {
 
@@ -55,7 +55,7 @@ public class ControllerAnalyst {
     private TextArea negArea;
 
     @FXML
-    void initialize() {
+    void initialize(){
         logOut();
         streamMessage();
         addData();
@@ -63,6 +63,7 @@ public class ControllerAnalyst {
         pieChart.setData(getChart());
         refreshChart();
         getPopMess();
+        showWeather();
     }
     int sentimentP;
     int sentimentN;
@@ -233,7 +234,7 @@ public class ControllerAnalyst {
             conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
             Statement statement = (Statement) conn.createStatement();
 
-            String sql = "SELECT sentiment, COUNT(ID) AS numberOfTweets FROM messages GROUP BY sentiment";
+            String sql = "SELECT sentiment, COUNT(ID) AS numberOfTweets FROM messages GROUP BY sentiment LIMIT 3";
 
             rs = statement.executeQuery(sql);
             while(rs.next()){
@@ -298,5 +299,8 @@ public class ControllerAnalyst {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    private void showWeather(){
+
     }
 }
