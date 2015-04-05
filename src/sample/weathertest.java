@@ -6,6 +6,8 @@ import net.aksingh.owmjapis.OpenWeatherMap;
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 /**
  * Created by Eldin on 4-4-2015.
@@ -24,21 +26,23 @@ public class weathertest {
         float getCurrentTemp = cwd.getMainInstance().getTemperature();
 
         //convert float naar int, rond af naar beneden
-        int minTemp = (int)getMinTemp;
-        int maxTemp = (int)getMaxTemp;
-        int curTemp = (int)getCurrentTemp;
+        float minTemp = (float)getMinTemp;
+        float maxTemp = (float)getMaxTemp;
+        float curTemp = (float)getCurrentTemp;
 
         //convert Fahrenheit naar Celsius
-        int minTempC = (minTemp - 32)*(5/9);
-        int maxTempC = (maxTemp - 32)*(5/9);
-        int curTempC = (curTemp - 32)*(5/9);
+        float minTempC = (minTemp - 32)*5/9;
+        float maxTempC = (maxTemp - 32)*5/9;
+        float curTempC = (curTemp - 32)*5/9;
+
+        NumberFormat formatter = new DecimalFormat("#0.0");
 
         System.out.println("City: " + cwd.getCityName());
         System.out.println("Temperature Fahrenheit: " + cwd.getMainInstance().getMaxTemperature()
                 + "/" + cwd.getMainInstance().getMinTemperature() + "\'F" + "\n\r");
 
-        System.out.println("Temperature Celsius: " + maxTempC
-                + "/" + minTempC + "\'C" + "\n\r");
+        System.out.println("Temperature Celsius: " + formatter.format(maxTempC)
+                + "/" + formatter.format(minTempC) + "\'C" + "\n\r");
 
         // pakt de eerste resultaat van het weer van een arraylist en print uit de descriptie.
         System.out.println("descriptie: " + cwd.getWeatherInstance(0).getWeatherName() + "\n\r");
@@ -54,7 +58,7 @@ public class weathertest {
 
         //pakt de main info van het weer en print uit de real time temp.
         System.out.println("current temp Fahrenheit: " + cwd.getMainInstance().getTemperature() + "\'F" + "\n\r");
-        System.out.println("current temp Celsius: " + curTempC + "\'C" + "\n\r");
+        System.out.println("current temp Celsius: " + formatter.format(curTempC) + "\'C" + "\n\r");
         //checkt of humidity info beschikbaar is voor de stad en als het beschikbaar is print die uit wat het is.
         boolean humidity = cwd.getMainInstance().hasHumidity();
         if (humidity){
