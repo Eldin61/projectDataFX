@@ -19,7 +19,7 @@ public class weathertest {
     private static void getCityWeather() throws IOException, JSONException {
         OpenWeatherMap owm = new OpenWeatherMap("");
 
-        CurrentWeather cwd = owm.currentWeatherByCityName("Rotterdam");
+        CurrentWeather cwd = owm.currentWeatherByCityName("Rotterdam, Netherlands");
 
         float getMaxTemp = cwd.getMainInstance().getMaxTemperature();
         float getMinTemp = cwd.getMainInstance().getMinTemperature();
