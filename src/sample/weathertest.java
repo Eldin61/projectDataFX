@@ -6,8 +6,10 @@ import net.aksingh.owmjapis.OpenWeatherMap;
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 
 /**
  * Created by Eldin on 4-4-2015.
@@ -20,6 +22,14 @@ public class weathertest {
         OpenWeatherMap owm = new OpenWeatherMap("");
 
         CurrentWeather cwd = owm.currentWeatherByCityName("Rotterdam, Netherlands");
+        /*int today = cwd.getDateTime().getDate();
+        int datetestDay = cwd.getDateTime().getMonth();
+        int datetestYear = cwd.getDateTime().getYear();
+        */
+
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        java.util.Date utildate = new java.util.Date();
+        java.sql.Date sqldate = new java.sql.Date(utildate.getDate());
 
         float getMaxTemp = cwd.getMainInstance().getMaxTemperature();
         float getMinTemp = cwd.getMainInstance().getMinTemperature();
@@ -37,6 +47,8 @@ public class weathertest {
 
         NumberFormat formatter = new DecimalFormat("#0.0");
 
+        System.out.println("Date " + sqldate);
+        System.out.println("fuckyoudatum " + sqldate.getMonth());
         System.out.println("City: " + cwd.getCityName());
         System.out.println("Temperature Fahrenheit: " + cwd.getMainInstance().getMaxTemperature()
                 + "/" + cwd.getMainInstance().getMinTemperature() + "\'F" + "\n\r");

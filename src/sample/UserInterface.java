@@ -21,6 +21,7 @@ public class UserInterface extends Application{
         primaryStage.setTitle("Analyst");
         primaryStage.setScene(new Scene(root, 1096, 802));
         primaryStage.setResizable(false);
+        //primaryStage.setFullScreen(true);
         primaryStage.show();
         stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override

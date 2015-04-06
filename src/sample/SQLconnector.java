@@ -2,7 +2,6 @@ package sample;
 import javafx.stage.Stage;
 
 import javax.swing.*;
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.sql.*;
 
 public class SQLconnector {
@@ -11,9 +10,9 @@ public class SQLconnector {
     String dbPass = null;
     String firstName = null;
     String userType = null;
-    String dbURL = "jdbc:mysql://sql3.freemysqlhosting.net:3306/sql372231";
-    String dbUser = "sql372231";
-    String dbPassWord = "qU3*rU9*";
+    String dbURL = "jdbc:mysql://sql3.freemysqlhosting.net:3306/sql372954";
+    String dbUser = "sql372954";
+    String dbPassWord = "kZ3*xJ2!";
     String jdbcDriver = "com.mysql.jdbc.Driver";
 
     public boolean checkCred(String userName1, String passWord1) throws Exception {
@@ -114,6 +113,23 @@ public class SQLconnector {
             e.printStackTrace();
         }
     }
+
+    public void getWeather(String date, float temp, String description){
+        try {
+            Class.forName(jdbcDriver);
+            conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
+            Statement statement = conn.createStatement();
+
+            String sql =    "INSERT INTO weather(date, temperature, weatherDescription)" +
+                            "VALUES('" + date +"','" + temp +"','" + description +"')";
+            statement.executeUpdate(sql);
+        } catch(Exception e){
+            e.printStackTrace();
+            System.out.println("Weatherdata was already added scrub");
+        }
+    }
+
+
     public void getPopMess(){
         try {
             Class.forName(jdbcDriver);

@@ -34,7 +34,7 @@
                           <tabs>
                             <Tab text="Welcome">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane id="btnWeather" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
                                           <Label layoutX="283.0" layoutY="52.0" text="Welcome to the Blijdorp analysis application" textFill="#076185">
                                              <font>
@@ -46,6 +46,7 @@
                                                 <Image url="@../blijdorp.png" />
                                              </image>
                                           </ImageView>
+                                          <Button fx:id="btnWeather"  layoutX="507.0" layoutY="489.0" mnemonicParsing="false" text="Weathertest" />
                                        </children>
                                     </AnchorPane>
                               </content>

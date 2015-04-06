@@ -11,14 +11,19 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import net.aksingh.owmjapis.CurrentWeather;
+import net.aksingh.owmjapis.OpenWeatherMap;
 import twitter4j.*;
 
 import javax.swing.*;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.util.List;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class ControllerAnalyst {
@@ -53,6 +58,8 @@ public class ControllerAnalyst {
     private TextArea posArea;
     @FXML
     private TextArea negArea;
+    @FXML
+    private Button btnWeather;
 
     @FXML
     void initialize(){
@@ -64,6 +71,7 @@ public class ControllerAnalyst {
         refreshChart();
         getPopMess();
         showWeather();
+        weatherT();
     }
     int sentimentP;
     int sentimentN;
@@ -78,9 +86,9 @@ public class ControllerAnalyst {
     String posMess;
     String negMess;
 
-    String dbURL = "jdbc:mysql://sql3.freemysqlhosting.net:3306/sql372231";
-    String dbUser = "sql372231";
-    String dbPassWord = "qU3*rU9*";
+    String dbURL = "jdbc:mysql://sql3.freemysqlhosting.net:3306/sql372954";
+    String dbUser = "sql372954";
+    String dbPassWord = "kZ3*xJ2!";
     String jdbcDriver = "com.mysql.jdbc.Driver";
     Connection conn = null;
 
@@ -203,7 +211,6 @@ public class ControllerAnalyst {
                         retweets = status.getRetweetCount();
                         fav = status.getFavoriteCount();
                         followers = user.getFollowersCount();
-
                         usernames = usernames.replaceAll("[^a-zA-Z0-9@:/# ]", "");
                         tweetMess = tweetMess.replaceAll("[^a-zA-Z0-9@:/# ]", "");
 
@@ -228,6 +235,47 @@ public class ControllerAnalyst {
             }
         });
     }
+
+    private void weatherT(){
+        final SQLconnector s = new SQLconnector();
+
+        btnWeather.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                OpenWeatherMap owm = new OpenWeatherMap("");
+
+                try{
+                    CurrentWeather cwd = owm.currentWeatherByCityName("Rotterdam, Netherlands");
+                    String weatherDesc = cwd.getWeatherInstance(0).getWeatherDescription();
+                    DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                    Date date = new Date();
+                    //moet nog opgeslagen worden als date
+                    String currentDate = dateFormat.format(date);
+                    //haalt min en max temperatuur binnen van de huidige dag in Fahrenheit
+                    float getMaxTemp = cwd.getMainInstance().getMaxTemperature();
+                    float getMinTemp = cwd.getMainInstance().getMinTemperature();
+
+                    //reken om naar celsius
+                    float maxTemp = (getMaxTemp - 32)*5/9;
+                    float minTemp = (getMinTemp - 32)*5/9;
+                    float averageTemp = (maxTemp + minTemp) / 2;
+
+                    System.out.println("date: " + currentDate);
+                    //System.out.println("max: " + maxTemp);
+                    //System.out.println("min: " + minTemp);
+                    System.out.println("avg: " + averageTemp);
+                    System.out.println("descriptie: " + weatherDesc);
+
+                    s.getWeather(currentDate, averageTemp, weatherDesc );
+
+                }catch(IOException ioe) {
+                    ioe.printStackTrace();
+                    System.exit(0);
+                }
+            }
+        });
+    }
+
     private void getSentiment(){
         try {
             Class.forName(jdbcDriver);
