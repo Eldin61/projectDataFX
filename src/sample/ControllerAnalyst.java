@@ -185,7 +185,7 @@ public class ControllerAnalyst {
                 int queryAmount;
                 String sentiment;
                 String usernames;
-                String date;
+                String currentdate;
                 String tweetMess;
                 String geo;
                 int retweets;
@@ -202,10 +202,15 @@ public class ControllerAnalyst {
                     query.count(queryAmount);
                     QueryResult result = twitter.search(query);
                     for (Status status : result.getTweets()) {// print uit
-                        User user = status.getUser();
 
+                        //datum toevoegen in zelfde format als in table weather
+                        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                        Date today = new Date();
+                        currentdate = dateFormat.format(today);
+
+                        User user = status.getUser();
                         usernames = status.getUser().getScreenName();
-                        date = "" + status.getCreatedAt();
+                        //date = "" + status.getCreatedAt();
                         tweetMess = status.getText();
                         geo = "" + status.getGeoLocation();
                         retweets = status.getRetweetCount();
@@ -225,7 +230,7 @@ public class ControllerAnalyst {
                         } else {
                             sentiment = "positive";
                         }
-                        s.addTweets(usernames, date, tweetMess, geo, sentiment, retweets, fav, followers);
+                        s.addTweets(usernames, currentdate, tweetMess, geo, sentiment, retweets, fav, followers);
                     }
                 } catch (TwitterException te) {
                     te.printStackTrace();

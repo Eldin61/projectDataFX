@@ -92,14 +92,14 @@ public class SQLconnector {
         }
     } */
     int test;
-    public void addTweets(String username, String date, String message, String geo, String sentiment, int retweet, int fav, int followers) {
+    public void addTweets(String username, String currentdate, String message, String geo, String sentiment, int retweet, int fav, int followers) {
         try {
             Class.forName(jdbcDriver);
             conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
             Statement statement = conn.createStatement();
 
             String sql =    "INSERT INTO messages(username, dateAdded, message, geo, sentiment)" +
-                            "VALUES('" + username + "','" + date + "','" + message + "','" + geo + "','" + sentiment +"')";
+                            "VALUES('" + username + "','" + currentdate + "','" + message + "','" + geo + "','" + sentiment +"')";
             statement.executeUpdate(sql);
             String sqlTw =  "SELECT ID FROM messages WHERE username='"+ username + "'";
             rs = statement.executeQuery(sqlTw);
