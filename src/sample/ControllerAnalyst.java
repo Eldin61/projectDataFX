@@ -13,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import net.aksingh.owmjapis.CurrentWeather;
 import net.aksingh.owmjapis.OpenWeatherMap;
+import org.json.*;
 import twitter4j.*;
 
 import javax.swing.*;
@@ -63,15 +64,15 @@ public class ControllerAnalyst {
 
     @FXML
     void initialize(){
-        logOut();
-        streamMessage();
-        addData();
-        getSentiment();
-        pieChart.setData(getChart());
-        refreshChart();
-        getPopMess();
+        //logOut();
+        //streamMessage();
+        //addData();
+        //getSentiment();
+        //pieChart.setData(getChart());
+        //refreshChart();
+        //getPopMess();
         showWeather();
-        weatherT();
+        //weatherT();
     }
     int sentimentP;
     int sentimentN;
@@ -250,7 +251,12 @@ public class ControllerAnalyst {
                 OpenWeatherMap owm = new OpenWeatherMap("");
 
                 try{
-                    CurrentWeather cwd = owm.currentWeatherByCityName("Rotterdam, Netherlands");
+                    CurrentWeather cwd = null;
+                    try {
+                        cwd = owm.currentWeatherByCityName("Rotterdam, Netherlands");
+                    } catch (org.json.JSONException e) {
+                        e.printStackTrace();
+                    }
                     String weatherDesc = cwd.getWeatherInstance(0).getWeatherDescription();
                     DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
                     Date date = new Date();
@@ -352,39 +358,40 @@ public class ControllerAnalyst {
             e.printStackTrace();
         }
     }
+    int total;
+    int tweets;
+    int pos;
     private void showWeather(){
+
         try {
             Class.forName(jdbcDriver);
             conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
             Statement statement = (Statement) conn.createStatement();
 
-            String sql = "SELECT m.sentiment, w.dateAdded, w.temperature, w.weatherDescription, COUNT(m.ID) AS total " +
-                    "FROM weather w " +
-                    "INNER JOIN messages m ON w.dateAdded = m.dateAdded GROUP BY w.dateAdded";
-
-            //String sql = "SELECT m.sentiment, w.dateAdded, w.temperature, w.weatherDescription, COUNT(w.dateAdded) AS total " +
-            //        "FROM weather w, messages m " +
-            //        "WHERE w.dateAdded = m.dateAdded GROUP BY w.dateAdded";
+            String sql = "SELECT m.dateAdded, w.temperature, w.weatherDescription" +
+                    ", COUNT(m.dateAdded)as numberOfTweets FROM messages m, weather w " +
+                    "WHERE m.dateAdded=w.dateAdded GROUP BY m.dateAdded";
+            //String sql = "SELECT *, (SELECT COUNT(*) FROM messages m WHERE m.sentiment='positive') AS positief FROM messages";
             rs = statement.executeQuery(sql);
             while(rs.next()){
 
-                String test = rs.getString("temperature");
-                String test1 = rs.getString("total");
-                String test2 = rs.getString("weatherDescription");
-                String test3 = rs.getString("dateAdded");
-                String pSent = rs.getString("m.sentiment");
 
+                String testE = rs.getString("numberOfTweets");
+                String date = rs.getString("dateAdded");
+                String temp = rs.getString("temperature");
+                String descr = rs.getString("weatherDescription");
+                //String sent = rs.getString("sent");
+                tweets = Integer.parseInt(testE);
+                total += tweets;
+                System.out.println("Date: " + date + " - Messages: " + testE + " Temperature: " + temp + " " + descr + " " );
 
-                System.out.println("temp: " + test);
-                System.out.println("total: " + test1);
-                System.out.println("descrip: " + test2);
-                System.out.println("date: " + test3);
-                if(pSent.contains("positive")) {
-                    System.out.println("Total positive: " + "");
-                }
+                //String test = rs.getString("positief");
+                //ystem.out.println(test);
+
             }
         } catch (Exception e){
             e.printStackTrace();
         }
+        System.out.println("total: " + total);
     }
 }
