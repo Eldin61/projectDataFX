@@ -6,7 +6,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -72,7 +74,8 @@ public class ControllerAnalyst {
         //getPopMess();
         showWeather();
         //weatherT();
-        //posWeather();
+        getBarData();
+        getBar();
     }
     int sentimentP;
     int sentimentN;
@@ -272,8 +275,6 @@ public class ControllerAnalyst {
                     float averageTemp = (maxTemp + minTemp) / 2;
 
                     System.out.println("date: " + currentDate);
-                    //System.out.println("max: " + maxTemp);
-                    //System.out.println("min: " + minTemp);
                     System.out.println("avg: " + averageTemp);
                     System.out.println("descriptie: " + weatherDesc);
 
@@ -316,6 +317,27 @@ public class ControllerAnalyst {
         list.addAll(new PieChart.Data("Negative",sentimentN), new PieChart.Data("Positive",sentimentP));
         return list;
     }
+
+    private ObservableList<BarChart.Data> getBar(){
+        ObservableList<BarChart.Data> list = FXCollections.observableArrayList();
+        list.addAll(new BarChart.Data("totaal", 15) );
+        return list;
+    }
+
+    XYChart.Series Positive = new XYChart.Series();
+    XYChart.Series Negative = new XYChart.Series();
+    XYChart.Series Total = new XYChart.Series();
+
+    private void getBarData(){
+        Positive.setName("positive");
+        Negative.setName("negative");
+        Total.setName("total");
+
+        Positive.getData().add(new XYChart.Data("positive", 10));
+        Negative.getData().add(new XYChart.Data("negatief", 5));
+        Total.getData().add(new XYChart.Data("totaal", 15));
+    }
+
     private void refreshChart(){
         btnRefresh.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -396,15 +418,4 @@ public class ControllerAnalyst {
         System.out.println("total: " + total);
     }
 
-    /*private void posWeather(){
-        try{
-            Class.forName(jdbcDriver);
-            conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
-            Statement statement = (Statement) conn.createStatement();
-            String sql = "SELECT"
-            rs = statement.executeQuery(sql);
-        } catch(Exception e){
-            e.printStackTrace();
-        }
-    }*/
 }
