@@ -288,7 +288,6 @@ public class ControllerAnalyst {
             Statement statement = (Statement) conn.createStatement();
 
             String sql = "SELECT sentiment, COUNT(ID) AS numberOfTweets FROM messages GROUP BY sentiment LIMIT 3";
-
             rs = statement.executeQuery(sql);
             while(rs.next()){
                 String tweetsT = rs.getString("sentiment") + ": " + rs.getString("numberOfTweets");
@@ -354,6 +353,38 @@ public class ControllerAnalyst {
         }
     }
     private void showWeather(){
+        try {
+            Class.forName(jdbcDriver);
+            conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
+            Statement statement = (Statement) conn.createStatement();
 
+            String sql = "SELECT m.sentiment, w.dateAdded, w.temperature, w.weatherDescription, COUNT(m.ID) AS total " +
+                    "FROM weather w " +
+                    "INNER JOIN messages m ON w.dateAdded = m.dateAdded GROUP BY w.dateAdded";
+
+            //String sql = "SELECT m.sentiment, w.dateAdded, w.temperature, w.weatherDescription, COUNT(w.dateAdded) AS total " +
+            //        "FROM weather w, messages m " +
+            //        "WHERE w.dateAdded = m.dateAdded GROUP BY w.dateAdded";
+            rs = statement.executeQuery(sql);
+            while(rs.next()){
+
+                String test = rs.getString("temperature");
+                String test1 = rs.getString("total");
+                String test2 = rs.getString("weatherDescription");
+                String test3 = rs.getString("dateAdded");
+                String pSent = rs.getString("m.sentiment");
+
+
+                System.out.println("temp: " + test);
+                System.out.println("total: " + test1);
+                System.out.println("descrip: " + test2);
+                System.out.println("date: " + test3);
+                if(pSent.contains("positive")) {
+                    System.out.println("Total positive: " + "");
+                }
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

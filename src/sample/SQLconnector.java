@@ -120,7 +120,7 @@ public class SQLconnector {
             conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
             Statement statement = conn.createStatement();
 
-            String sql =    "INSERT INTO weather(date, temperature, weatherDescription)" +
+            String sql =    "INSERT INTO weather(dateAdded, temperature, weatherDescription)" +
                             "VALUES('" + date +"','" + temp +"','" + description +"')";
             statement.executeUpdate(sql);
         } catch(Exception e){
