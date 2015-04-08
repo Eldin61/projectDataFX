@@ -46,7 +46,7 @@
                                                 <Image url="@../blijdorp.png" />
                                              </image>
                                           </ImageView>
-                                          <Button fx:id="btnWeather" layoutX="507.0" layoutY="489.0" mnemonicParsing="false" text="Weathertest" />
+                                          <Button fx:id="btnWeather"  layoutX="507.0" layoutY="489.0" mnemonicParsing="false" text="Weathertest" />
                                        </children>
                                     </AnchorPane>
                               </content>
@@ -78,6 +78,7 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
+                                          <PieChart fx:id="pieChart" layoutX="-12.0" layoutY="128.0" title="Attitude" />
                                           <Button fx:id="btnRefresh" layoutX="210.0" layoutY="580.0" mnemonicParsing="false" style="-fx-background-color: #3DA7D1;" text="Refresh" textFill="WHITE" />
                                           <TextArea fx:id="posArea" layoutX="488.0" layoutY="79.0" prefHeight="232.0" prefWidth="534.0" />
                                           <TextArea fx:id="negArea" layoutX="493.0" layoutY="414.0" prefHeight="228.0" prefWidth="538.0" />
@@ -91,14 +92,6 @@
                                                 <Font size="23.0" />
                                              </font>
                                           </Label>
-                                          <BarChart layoutX="14.0" layoutY="157.0" prefHeight="350.0" prefWidth="454.0" title="Attitude">
-                                            <xAxis>
-                                              <CategoryAxis side="BOTTOM" />
-                                            </xAxis>
-                                            <yAxis>
-                                              <NumberAxis side="LEFT" />
-                                            </yAxis>
-                                          </BarChart>
                                        </children></AnchorPane>
                                 </content>
                               </Tab>
