@@ -13,7 +13,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import net.aksingh.owmjapis.CurrentWeather;
 import net.aksingh.owmjapis.OpenWeatherMap;
-import org.json.*;
 import twitter4j.*;
 
 import javax.swing.*;
@@ -73,6 +72,7 @@ public class ControllerAnalyst {
         //getPopMess();
         showWeather();
         //weatherT();
+        //posWeather();
     }
     int sentimentP;
     int sentimentN;
@@ -368,7 +368,8 @@ public class ControllerAnalyst {
             conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
             Statement statement = (Statement) conn.createStatement();
 
-            String sql = "SELECT m.dateAdded, w.temperature, w.weatherDescription" +
+            String sql = "SELECT m.dateAdded, w.temperature, w.weatherDescription, " +
+                    "(SELECT COUNT(*) FROM messages m WHERE m.sentiment='positive' AND m.dateAdded=w.dateAdded) AS sent" +
                     ", COUNT(m.dateAdded)as numberOfTweets FROM messages m, weather w " +
                     "WHERE m.dateAdded=w.dateAdded GROUP BY m.dateAdded";
             //String sql = "SELECT *, (SELECT COUNT(*) FROM messages m WHERE m.sentiment='positive') AS positief FROM messages";
@@ -380,10 +381,10 @@ public class ControllerAnalyst {
                 String date = rs.getString("dateAdded");
                 String temp = rs.getString("temperature");
                 String descr = rs.getString("weatherDescription");
-                //String sent = rs.getString("sent");
+                String sent = rs.getString("sent");
                 tweets = Integer.parseInt(testE);
                 total += tweets;
-                System.out.println("Date: " + date + " - Messages: " + testE + " Temperature: " + temp + " " + descr + " " );
+                System.out.println("Date: " + date + " - Messages: " + testE + " Temperature: " + temp + " " + descr + " " + sent);
 
                 //String test = rs.getString("positief");
                 //ystem.out.println(test);
@@ -394,4 +395,16 @@ public class ControllerAnalyst {
         }
         System.out.println("total: " + total);
     }
+
+    /*private void posWeather(){
+        try{
+            Class.forName(jdbcDriver);
+            conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
+            Statement statement = (Statement) conn.createStatement();
+            String sql = "SELECT"
+            rs = statement.executeQuery(sql);
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+    }*/
 }
