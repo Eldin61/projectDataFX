@@ -48,15 +48,10 @@ public class ControllerAdmin {
     private TextField firstField;
 
     @FXML
+    /**
+     * Initialize start de applicatie.
+     */
     void initialize() {
-        assert passField != null : "fx:id=\"passField\" was not injected: check your FXML file 'Admin.fxml'.";
-        assert analystCheck != null : "fx:id=\"analystCheck\" was not injected: check your FXML file 'Admin.fxml'.";
-        assert userField != null : "fx:id=\"userField\" was not injected: check your FXML file 'Admin.fxml'.";
-        assert adminCheck != null : "fx:id=\"adminCheck\" was not injected: check your FXML file 'Admin.fxml'.";
-        assert logOut != null : "fx:id=\"logOut\" was not injected: check your FXML file 'Admin.fxml'.";
-        assert familyField != null : "fx:id=\"familyField\" was not injected: check your FXML file 'Admin.fxml'.";
-        assert btnAddAcc != null : "fx:id=\"btnAddAcc\" was not injected: check your FXML file 'Admin.fxml'.";
-        assert firstField != null : "fx:id=\"firstField\" was not injected: check your FXML file 'Admin.fxml'.";
         checkRadio();
         logOut();
     }
@@ -66,6 +61,9 @@ public class ControllerAdmin {
     String firstname;
     String familyname;
 
+    /**
+     * Deze methode bekijkt welke toggle geselcteerd is en verstuurd de ingevulde data door naar s class om het op te slaan.
+     */
     private void checkRadio(){
         ToggleGroup group = new ToggleGroup();
 
@@ -87,9 +85,17 @@ public class ControllerAdmin {
                 firstname = firstField.getText();
                 familyname = familyField.getText();
                 s.addAccount(username, password, firstname, familyname, authorityLevel);
+                userField.setText("");
+                passField.setText("");
+                firstField.setText("");
+                familyField.setText("");
             }
         });
     }
+
+    /**
+     * Hier roept deze methode een andere methode op om uit te loggen uit de applicatie.
+     */
     private void logOut(){
         logOut.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override

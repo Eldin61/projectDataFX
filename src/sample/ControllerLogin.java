@@ -34,6 +34,10 @@ public class ControllerLogin implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         login();
     }
+
+    /**
+     * met deze methode logt de gebruiker in de applicatie
+     */
     private void login(){
         btnlogin.setOnAction(new EventHandler<ActionEvent>() {
             @Override

@@ -69,7 +69,7 @@ public class ControllerAnalyst {
         getSentiment();
         pieChart.setData(getChart());
         refreshChart();
-        //getPopMess();
+        getPopMess();
         showWeather();
         weatherT();
         //posWeather();
@@ -246,9 +246,6 @@ public class ControllerAnalyst {
     private void weatherT(){
         final SQLconnector s = new SQLconnector();
 
-        btnWeather.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
                 OpenWeatherMap owm = new OpenWeatherMap("");
 
                 try{
@@ -285,8 +282,6 @@ public class ControllerAnalyst {
                     System.exit(0);
                 }
             }
-        });
-    }
 
     private void getSentiment(){
         try {
@@ -349,10 +344,10 @@ public class ControllerAnalyst {
                     posMess = "Username: " + username + "\n\rFollowers: " + follower + "\n\rRetweets: " + retweets + "\n\rFavourites: " + fav + "\n\rMessage: " + incMess + "\n\r" + "\n\r";
                     posArea.appendText(posMess);
                 }
-                if(messagesTot.contains("negative")){
-                    negMess = "Username: " + username + "\n\rFollowers: " + follower + "\n\rRetweets: " + retweets + "\n\rFavourites: " + fav + "\n\rMessage: " + incMess + "\n\r \n\r";
-                    negArea.appendText(negMess);
-                }
+                //if(messagesTot.contains("negative")){
+                 //   negMess = "Username: " + username + "\n\rFollowers: " + follower + "\n\rRetweets: " + retweets + "\n\rFavourites: " + fav + "\n\rMessage: " + incMess + "\n\r \n\r";
+                 //   negArea.appendText(negMess);
+               // }
 
             }
         } catch (Exception e) {
