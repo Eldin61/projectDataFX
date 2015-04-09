@@ -62,7 +62,7 @@ public class SQLconnector {
         }
     }
 
-    //laat users hun wachtwoord opvragen
+    //Laat users hun wachtwoord opvragen
     public void getPassword(String username3, String firstName3, String lastName3) {
         try {
             Class.forName(jdbcDriver);
@@ -147,7 +147,7 @@ public class SQLconnector {
             e.printStackTrace();
         }
     }
-    //sorteerd tweets op het aantal retweets
+    //Sorteerd tweets op het aantal retweets
     public void sortPop(){
         try {
             Class.forName(jdbcDriver);
