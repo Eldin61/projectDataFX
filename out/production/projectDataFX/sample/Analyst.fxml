@@ -46,7 +46,7 @@
                                                 <Image url="@../blijdorp.png" />
                                              </image>
                                           </ImageView>
-                                          <Button fx:id="btnWeather"  layoutX="507.0" layoutY="489.0" mnemonicParsing="false" text="Weathertest" />
+                                          <Button fx:id="btnWeather"  layoutX="507.0" layoutY="489.0" mnemonicParsing="false" text="Get Weather" />
                                        </children>
                                     </AnchorPane>
                               </content>
@@ -87,7 +87,7 @@
                                                 <Font size="23.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="595.0" layoutY="347.0" text="Most popular negative messages">
+                                          <Label layoutX="595.0" layoutY="347.0" text="Current weather and sentiment data">
                                              <font>
                                                 <Font size="23.0" />
                                              </font>
