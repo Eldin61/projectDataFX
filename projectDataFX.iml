@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="intellijplz4" level="application" />
-    <orderEntry type="library" name="al die zieke apis" level="application" />
+    <orderEntry type="library" name="JavaFXApp" level="project" />
+    <orderEntry type="library" name="apis" level="application" />
   </component>
 </module>

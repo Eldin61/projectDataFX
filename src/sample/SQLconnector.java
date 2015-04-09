@@ -15,6 +15,7 @@ public class SQLconnector {
     String dbPassWord = "kZ3*xJ2!";
     String jdbcDriver = "com.mysql.jdbc.Driver";
 
+    //Controleerd de login gegevens in de database
     public boolean checkCred(String userName1, String passWord1) throws Exception {
         try {
             Class.forName(jdbcDriver);
@@ -41,7 +42,6 @@ public class SQLconnector {
             } else {
                 UserInterface u = new UserInterface();
                 u.start(new Stage());
-                System.out.println("Rito plz buff analyst");
             }
             return true;
         } else {
@@ -49,6 +49,7 @@ public class SQLconnector {
         }
     }
 
+    //Laat admins accounts toevoegen en deze bij admins of analysten plaatsen
     public void addAccount(String username2, String password2, String firstName2, String lastName2, String authority) {
         try {
             Class.forName(jdbcDriver);
@@ -61,6 +62,7 @@ public class SQLconnector {
         }
     }
 
+    //laat users hun wachtwoord opvragen
     public void getPassword(String username3, String firstName3, String lastName3) {
         try {
             Class.forName(jdbcDriver);
@@ -77,21 +79,8 @@ public class SQLconnector {
         }
     }
 
-    /*public void selUserType(String username1){
-        try {
-            Class.forName(jdbcDriver);
-            conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
-            Statement statement = conn.createStatement();
-
-            String sql = "SELECT authority FROM employees WHERE
-
-            rs = statement.executeQuery(sql);
-
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-    } */
     int test;
+    //Plaatst tweets in de messages tabel in de database
     public void addTweets(String username, String currentdate, String message, String geo, String sentiment, int retweet, int fav, int followers) {
         try {
             Class.forName(jdbcDriver);
@@ -113,7 +102,7 @@ public class SQLconnector {
             e.printStackTrace();
         }
     }
-
+    //Plaatst het weer per datum in de database
     public void getWeather(String date, float temp, String description){
         try {
             Class.forName(jdbcDriver);
@@ -125,11 +114,11 @@ public class SQLconnector {
             statement.executeUpdate(sql);
         } catch(Exception e){
             e.printStackTrace();
-            System.out.println("Weatherdata was already added scrub");
+            System.out.println("Weatherdata was already added.");
         }
     }
 
-
+    //Haald tweets en informatie over die tweets op en sorteerd deze op het aantal followers.
     public void getPopMess(){
         try {
             Class.forName(jdbcDriver);
@@ -144,32 +133,7 @@ public class SQLconnector {
             e.printStackTrace();
         }
     }
-
-    /**public void testMethod(){
-        try {
-            Class.forName(jdbcDriver);
-            conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
-            Statement statement = conn.createStatement();
-
-            String sql = "SELECT sentiment, COUNT(ID) AS numberOfTweets FROM tweets GROUP BY sentiment";
-
-            rs = statement.executeQuery(sql);
-            admin a = new admin();
-            while(rs.next()){
-                String tweetsT = rs.getString("sentiment") + ": " + rs.getString("numberOfTweets");
-                if(tweetsT.contains("negative")){
-                   // a.getNeg(tweetsT);
-                }
-                if(tweetsT.contains("positive")){
-                    //a.getPos(tweetsT);
-                }
-            }
-
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-    }*/
-
+    //Plaatst tweets in een testtabel
     public void addStreamTw(String username, String message, String follower, int amount){
         try {
             Class.forName(jdbcDriver);
@@ -183,6 +147,7 @@ public class SQLconnector {
             e.printStackTrace();
         }
     }
+    //sorteerd tweets op het aantal retweets
     public void sortPop(){
         try {
             Class.forName(jdbcDriver);
