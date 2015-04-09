@@ -151,13 +151,11 @@
       <file leaf-file-name="ControllerLogin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/ControllerLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="935">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
               <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
               <folding>
                 <element signature="e#682#683#0" expanded="true" />
                 <element signature="e#705#706#0" expanded="true" />
-                <element signature="e#838#1403#0" expanded="true" />
-                <element signature="e#1402#1403#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -165,21 +163,21 @@
       </file>
       <file leaf-file-name="Analyst.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Analyst.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.0" vertical-offset="17" max-vertical-offset="1904">
               <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="SQLconnector.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SQLconnector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/SQLconnector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.9174008" vertical-offset="282" max-vertical-offset="3587">
+            <state vertical-scroll-proportion="0.0" vertical-offset="282" max-vertical-offset="3587">
               <caret line="122" column="51" selection-start-line="121" selection-start-column="0" selection-end-line="122" selection-end-column="51" />
               <folding />
             </state>
@@ -208,19 +206,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControllerAnalyst.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ControllerAnalyst.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/ControllerAnalyst.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="834" max-vertical-offset="4454">
-              <caret line="283" column="13" selection-start-line="283" selection-start-column="13" selection-end-line="283" selection-end-column="13" />
+            <state vertical-scroll-proportion="2.8909693" vertical-offset="1948" max-vertical-offset="5355">
+              <caret line="379" column="98" selection-start-line="379" selection-start-column="98" selection-end-line="379" selection-end-column="98" />
               <folding>
                 <element signature="method#logOut#0;class#ControllerAnalyst#0" expanded="false" />
                 <element signature="method#streamMessage#0;class#ControllerAnalyst#0" expanded="false" />
-                <element signature="method#addData#0;class#ControllerAnalyst#0" expanded="false" />
-                <marker date="1428571027101" expanded="true" signature="9825:9911" placeholder="SELECT senti..messages..." />
-                <marker date="1428571027101" expanded="true" signature="11445:11600" placeholder="SELECT usern..messages..." />
-                <marker date="1428571027101" expanded="true" signature="13590:13935" placeholder="SELECT m.dat..messages..." />
-                <marker date="1428571027101" expanded="true" signature="13673:13761" placeholder="SELECT COUNT..messages..." />
+                <marker date="1428609677715" expanded="true" signature="10113:10199" placeholder="SELECT senti..messages..." />
+                <marker date="1428609677715" expanded="true" signature="12017:12172" placeholder="SELECT usern..messages..." />
+                <marker date="1428609677715" expanded="true" signature="13598:13943" placeholder="SELECT m.dat..messages..." />
+                <marker date="1428609677715" expanded="true" signature="13681:13769" placeholder="SELECT COUNT..messages..." />
               </folding>
             </state>
           </provider>
@@ -266,9 +263,9 @@
         <option value="$PROJECT_DIR$/src/sample/UserInterface.java" />
         <option value="$PROJECT_DIR$/src/sample/SQLconnector.java" />
         <option value="$PROJECT_DIR$/src/sample/weathertest.java" />
-        <option value="$PROJECT_DIR$/src/sample/ControllerAnalyst.java" />
         <option value="$PROJECT_DIR$/src/sample/ControllerAdmin.java" />
         <option value="$PROJECT_DIR$/src/sample/ControllerLogin.java" />
+        <option value="$PROJECT_DIR$/src/sample/ControllerAnalyst.java" />
       </list>
     </option>
   </component>
@@ -311,7 +308,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -368,6 +364,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -787,11 +784,12 @@
       <workItem from="1428503399824" duration="2872000" />
       <workItem from="1428570670695" duration="1896000" />
       <workItem from="1428608249486" duration="371000" />
+      <workItem from="1428609191743" duration="486000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59460000" />
+    <option name="totallyTimeSpent" value="59946000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1058" extended-state="6" />
@@ -800,7 +798,6 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -822,6 +819,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39936775" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48818898" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -890,6 +888,14 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/sample/ControllerAdmin.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1309" max-vertical-offset="1734">
+          <caret line="96" column="88" selection-start-line="96" selection-start-column="88" selection-end-line="96" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ControllerAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="1632">
           <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding />
@@ -921,11 +927,10 @@
           <folding>
             <element signature="method#logOut#0;class#ControllerAnalyst#0" expanded="false" />
             <element signature="method#streamMessage#0;class#ControllerAnalyst#0" expanded="false" />
-            <element signature="method#addData#0;class#ControllerAnalyst#0" expanded="false" />
-            <marker date="1428571027101" expanded="true" signature="9825:9911" placeholder="SELECT senti..messages..." />
-            <marker date="1428571027101" expanded="true" signature="11445:11600" placeholder="SELECT usern..messages..." />
-            <marker date="1428571027101" expanded="true" signature="13590:13935" placeholder="SELECT m.dat..messages..." />
-            <marker date="1428571027101" expanded="true" signature="13673:13761" placeholder="SELECT COUNT..messages..." />
+            <marker date="1428609677715" expanded="true" signature="10113:10199" placeholder="SELECT senti..messages..." />
+            <marker date="1428609677715" expanded="true" signature="12017:12172" placeholder="SELECT usern..messages..." />
+            <marker date="1428609677715" expanded="true" signature="13598:13943" placeholder="SELECT m.dat..messages..." />
+            <marker date="1428609677715" expanded="true" signature="13681:13769" placeholder="SELECT COUNT..messages..." />
           </folding>
         </state>
       </provider>
@@ -955,13 +960,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Admin.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="884">
           <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
@@ -978,21 +983,19 @@
           <folding>
             <element signature="e#682#683#0" expanded="true" />
             <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#838#1403#0" expanded="true" />
-            <element signature="e#1402#1403#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Analyst.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1479">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/SQLconnector.java">
@@ -1028,11 +1031,10 @@
           <folding>
             <element signature="method#logOut#0;class#ControllerAnalyst#0" expanded="false" />
             <element signature="method#streamMessage#0;class#ControllerAnalyst#0" expanded="false" />
-            <element signature="method#addData#0;class#ControllerAnalyst#0" expanded="false" />
-            <marker date="1428571027101" expanded="true" signature="9825:9911" placeholder="SELECT senti..messages..." />
-            <marker date="1428571027101" expanded="true" signature="11445:11600" placeholder="SELECT usern..messages..." />
-            <marker date="1428571027101" expanded="true" signature="13590:13935" placeholder="SELECT m.dat..messages..." />
-            <marker date="1428571027101" expanded="true" signature="13673:13761" placeholder="SELECT COUNT..messages..." />
+            <marker date="1428609677715" expanded="true" signature="10113:10199" placeholder="SELECT senti..messages..." />
+            <marker date="1428609677715" expanded="true" signature="12017:12172" placeholder="SELECT usern..messages..." />
+            <marker date="1428609677715" expanded="true" signature="13598:13943" placeholder="SELECT m.dat..messages..." />
+            <marker date="1428609677715" expanded="true" signature="13681:13769" placeholder="SELECT COUNT..messages..." />
           </folding>
         </state>
       </provider>
@@ -1046,13 +1048,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Admin.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="884">
           <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
@@ -1069,21 +1071,19 @@
           <folding>
             <element signature="e#682#683#0" expanded="true" />
             <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#838#1403#0" expanded="true" />
-            <element signature="e#1402#1403#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Analyst.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1479">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/SQLconnector.java">
@@ -1119,11 +1119,10 @@
           <folding>
             <element signature="method#logOut#0;class#ControllerAnalyst#0" expanded="false" />
             <element signature="method#streamMessage#0;class#ControllerAnalyst#0" expanded="false" />
-            <element signature="method#addData#0;class#ControllerAnalyst#0" expanded="false" />
-            <marker date="1428571027101" expanded="true" signature="9825:9911" placeholder="SELECT senti..messages..." />
-            <marker date="1428571027101" expanded="true" signature="11445:11600" placeholder="SELECT usern..messages..." />
-            <marker date="1428571027101" expanded="true" signature="13590:13935" placeholder="SELECT m.dat..messages..." />
-            <marker date="1428571027101" expanded="true" signature="13673:13761" placeholder="SELECT COUNT..messages..." />
+            <marker date="1428609677715" expanded="true" signature="10113:10199" placeholder="SELECT senti..messages..." />
+            <marker date="1428609677715" expanded="true" signature="12017:12172" placeholder="SELECT usern..messages..." />
+            <marker date="1428609677715" expanded="true" signature="13598:13943" placeholder="SELECT m.dat..messages..." />
+            <marker date="1428609677715" expanded="true" signature="13681:13769" placeholder="SELECT COUNT..messages..." />
           </folding>
         </state>
       </provider>
@@ -1137,13 +1136,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Admin.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="884">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
@@ -1167,8 +1166,6 @@
           <folding>
             <element signature="e#682#683#0" expanded="true" />
             <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#838#1403#0" expanded="true" />
-            <element signature="e#1402#1403#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1206,11 +1203,10 @@
           <folding>
             <element signature="method#logOut#0;class#ControllerAnalyst#0" expanded="false" />
             <element signature="method#streamMessage#0;class#ControllerAnalyst#0" expanded="false" />
-            <element signature="method#addData#0;class#ControllerAnalyst#0" expanded="false" />
-            <marker date="1428571027101" expanded="true" signature="9825:9911" placeholder="SELECT senti..messages..." />
-            <marker date="1428571027101" expanded="true" signature="11445:11600" placeholder="SELECT usern..messages..." />
-            <marker date="1428571027101" expanded="true" signature="13590:13935" placeholder="SELECT m.dat..messages..." />
-            <marker date="1428571027101" expanded="true" signature="13673:13761" placeholder="SELECT COUNT..messages..." />
+            <marker date="1428609677715" expanded="true" signature="10113:10199" placeholder="SELECT senti..messages..." />
+            <marker date="1428609677715" expanded="true" signature="12017:12172" placeholder="SELECT usern..messages..." />
+            <marker date="1428609677715" expanded="true" signature="13598:13943" placeholder="SELECT m.dat..messages..." />
+            <marker date="1428609677715" expanded="true" signature="13681:13769" placeholder="SELECT COUNT..messages..." />
           </folding>
         </state>
       </provider>
@@ -1224,13 +1220,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Admin.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="884">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
@@ -1247,30 +1243,28 @@
           <folding>
             <element signature="e#682#683#0" expanded="true" />
             <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#838#1403#0" expanded="true" />
-            <element signature="e#1402#1403#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="221">
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.066667" vertical-offset="17" max-vertical-offset="799">
           <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/loginForm.css">
@@ -1288,19 +1282,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Admin.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="884">
           <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ControllerAdmin.java">
+    <entry file="file://$PROJECT_DIR$/src/twitter4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1734">
-          <caret line="96" column="88" selection-start-line="96" selection-start-column="88" selection-end-line="96" selection-end-column="88" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1312,41 +1306,26 @@
           <folding>
             <element signature="e#682#683#0" expanded="true" />
             <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#838#1403#0" expanded="true" />
-            <element signature="e#1402#1403#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Admin.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Analyst.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="2074">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/twitter4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ControllerAnalyst.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/SQLconnector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1140" max-vertical-offset="4505">
-          <caret line="283" column="13" selection-start-line="283" selection-start-column="13" selection-end-line="283" selection-end-column="13" />
-          <folding>
-            <element signature="method#logOut#0;class#ControllerAnalyst#0" expanded="false" />
-            <element signature="method#streamMessage#0;class#ControllerAnalyst#0" expanded="false" />
-            <element signature="method#addData#0;class#ControllerAnalyst#0" expanded="false" />
-            <marker date="1428571027101" expanded="true" signature="9825:9911" placeholder="SELECT senti..messages..." />
-            <marker date="1428571027101" expanded="true" signature="11445:11600" placeholder="SELECT usern..messages..." />
-            <marker date="1428571027101" expanded="true" signature="13590:13935" placeholder="SELECT m.dat..messages..." />
-            <marker date="1428571027101" expanded="true" signature="13673:13761" placeholder="SELECT COUNT..messages..." />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="282" max-vertical-offset="3587">
+          <caret line="122" column="51" selection-start-line="121" selection-start-column="0" selection-end-line="122" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1360,22 +1339,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Analyst.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/sample/Admin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="2074">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/SQLconnector.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/ControllerAdmin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.9174008" vertical-offset="282" max-vertical-offset="3587">
-          <caret line="122" column="51" selection-start-line="121" selection-start-column="0" selection-end-line="122" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1734">
+          <caret line="96" column="88" selection-start-line="96" selection-start-column="88" selection-end-line="96" selection-end-column="88" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ControllerAnalyst.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.8909693" vertical-offset="1948" max-vertical-offset="5355">
+          <caret line="379" column="98" selection-start-line="379" selection-start-column="98" selection-end-line="379" selection-end-column="98" />
+          <folding>
+            <element signature="method#logOut#0;class#ControllerAnalyst#0" expanded="false" />
+            <element signature="method#streamMessage#0;class#ControllerAnalyst#0" expanded="false" />
+            <marker date="1428609677715" expanded="true" signature="10113:10199" placeholder="SELECT senti..messages..." />
+            <marker date="1428609677715" expanded="true" signature="12017:12172" placeholder="SELECT usern..messages..." />
+            <marker date="1428609677715" expanded="true" signature="13598:13943" placeholder="SELECT m.dat..messages..." />
+            <marker date="1428609677715" expanded="true" signature="13681:13769" placeholder="SELECT COUNT..messages..." />
+          </folding>
         </state>
       </provider>
     </entry>

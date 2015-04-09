@@ -29,19 +29,7 @@ import java.util.ResourceBundle;
 public class ControllerAnalyst {
 
     @FXML
-    private ResourceBundle resources;
-    @FXML
-    private URL location;
-    @FXML
-    private Label welcome;
-    @FXML
-    private Button cnt;
-    @FXML
-    private Tab newtab;
-    @FXML
     private ImageView logOut;
-    @FXML
-    private SplitPane splitPane;
     @FXML
     private Button btnAdd;
     @FXML
@@ -72,7 +60,6 @@ public class ControllerAnalyst {
         getPopMess();
         showWeather();
         weatherT();
-        //posWeather();
     }
     int sentimentP;
     int sentimentN;
@@ -94,6 +81,9 @@ public class ControllerAnalyst {
     String jdbcDriver = "com.mysql.jdbc.Driver";
     Connection conn = null;
 
+    /**
+     * hier roept die de methode aan om uit te loggen
+     */
     private void logOut(){
         logOut.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -113,6 +103,10 @@ public class ControllerAnalyst {
             }
         });
     }
+
+    /**
+     * hierzo streamt die de messages van twitter. De methode haalt ze binnen en zet ze neer in een textfeld.
+     */
     private void streamMessage(){
         streamArea.setEditable(false);
         TwitterStream twitterStream = new TwitterStreamFactory().getInstance();
@@ -176,6 +170,10 @@ public class ControllerAnalyst {
         twitterStream.addListener(listener);
         twitterStream.filter(fq);
     }
+
+    /**
+     * bij deze methode haalt die data binnen uit twitter en dat slaat die dan op in een database.
+     */
     private void addData() {
 
         final SQLconnector s = new SQLconnector();
@@ -243,6 +241,9 @@ public class ControllerAnalyst {
         });
     }
 
+    /**
+     * deze methode zoekt met behulp van de openweathermap api op wat het weer is en dat slaat die dan op in onze database
+     */
     private void weatherT(){
         final SQLconnector s = new SQLconnector();
 
@@ -283,6 +284,9 @@ public class ControllerAnalyst {
                 }
             }
 
+    /**
+     * deze methode zoekt de verschillende sentimenten op uit onze database
+     */
     private void getSentiment(){
         try {
             Class.forName(jdbcDriver);
@@ -307,11 +311,20 @@ public class ControllerAnalyst {
             e.printStackTrace();
         }
     }
+
+    /**
+     * hier word data in de piechart gestopt.
+     * @return
+     */
     private ObservableList<PieChart.Data> getChart() {
         ObservableList<PieChart.Data> list = FXCollections.observableArrayList();
         list.addAll(new PieChart.Data("Negative",tweetsNeg), new PieChart.Data("Positive",tweetsSent));
         return list;
     }
+
+    /**
+     * met deze knop word de data  in de chart gerefreshed als het ware
+     */
     private void refreshChart(){
         btnRefresh.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -321,6 +334,10 @@ public class ControllerAnalyst {
             }
         });
     }
+
+    /**
+     * deze methode zoekt verschillende data op uit de database en sorteert dit dan in een textfeld
+     */
     private void getPopMess(){
         posArea.setEditable(false);
         //negArea.setEditable(false);
@@ -344,30 +361,13 @@ public class ControllerAnalyst {
                     posMess = "Username: " + username + "\n\rFollowers: " + follower + "\n\rRetweets: " + retweets + "\n\rFavourites: " + fav + "\n\rMessage: " + incMess + "\n\r" + "\n\r";
                     posArea.appendText(posMess);
                 }
-                //if(messagesTot.contains("negative")){
-                 //   negMess = "Username: " + username + "\n\rFollowers: " + follower + "\n\rRetweets: " + retweets + "\n\rFavourites: " + fav + "\n\rMessage: " + incMess + "\n\r \n\r";
-                 //   negArea.appendText(negMess);
-               // }
-
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-    /*private void showWeatherSent(){
-        negArea.setEditable(false);
-        try {
-            Class.forName(jdbcDriver);
-            conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
-            java.sql.Statement statement = conn.createStatement();
-        } catch(Exception e){
-            e.printStackTrace();
-        }
-    }*/
     int total;
     static int tweetsTot;
-    int pos;
     static int tweetsSent;
     static int tweetsNeg;
     String testE;
@@ -376,6 +376,9 @@ public class ControllerAnalyst {
     String descr;
     String sent;
 
+    /**
+     * hier halen we data oip uit onze database zodat we dit kunnen vergelijken in de applicatie. 
+     */
     private void showWeather(){
         negArea.setEditable(false);
         try {
@@ -414,16 +417,4 @@ public class ControllerAnalyst {
         }
         System.out.println("total: " + total);
     }
-
-    /*private void posWeather(){
-        try{
-            Class.forName(jdbcDriver);
-            conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
-            Statement statement = (Statement) conn.createStatement();
-            String sql = "SELECT"
-            rs = statement.executeQuery(sql);
-        } catch(Exception e){
-            e.printStackTrace();
-        }
-    }*/
 }
