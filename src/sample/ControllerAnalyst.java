@@ -63,15 +63,15 @@ public class ControllerAnalyst {
 
     @FXML
     void initialize(){
-        logOut();
-        streamMessage();
-        addData();
-        getSentiment();
-        pieChart.setData(getChart());
-        refreshChart();
-        getPopMess();
+        //logOut();
+        //streamMessage();
+        //addData();
+        //getSentiment();
+        //pieChart.setData(getChart());
+        //refreshChart();
+        //getPopMess();
         showWeather();
-        weatherT();
+        //weatherT();
         //posWeather();
     }
     int sentimentP;
