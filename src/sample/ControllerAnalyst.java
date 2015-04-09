@@ -63,15 +63,15 @@ public class ControllerAnalyst {
 
     @FXML
     void initialize(){
-        //logOut();
-        //streamMessage();
-        //addData();
-        //getSentiment();
-        //pieChart.setData(getChart());
-        //refreshChart();
+        logOut();
+        streamMessage();
+        addData();
+        getSentiment();
+        pieChart.setData(getChart());
+        refreshChart();
         //getPopMess();
         showWeather();
-        //weatherT();
+        weatherT();
         //posWeather();
     }
     int sentimentP;
@@ -86,6 +86,7 @@ public class ControllerAnalyst {
     String sentiment;
     String posMess;
     String negMess;
+    String showSentData;
 
     String dbURL = "jdbc:mysql://sql3.freemysqlhosting.net:3306/sql372954";
     String dbUser = "sql372954";
@@ -313,7 +314,7 @@ public class ControllerAnalyst {
     }
     private ObservableList<PieChart.Data> getChart() {
         ObservableList<PieChart.Data> list = FXCollections.observableArrayList();
-        list.addAll(new PieChart.Data("Negative",sentimentN), new PieChart.Data("Positive",sentimentP));
+        list.addAll(new PieChart.Data("Negative",tweetsNeg), new PieChart.Data("Positive",tweetsSent));
         return list;
     }
     private void refreshChart(){
@@ -327,7 +328,7 @@ public class ControllerAnalyst {
     }
     private void getPopMess(){
         posArea.setEditable(false);
-        negArea.setEditable(false);
+        //negArea.setEditable(false);
         try {
             Class.forName(jdbcDriver);
             conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
@@ -358,11 +359,30 @@ public class ControllerAnalyst {
             e.printStackTrace();
         }
     }
-    int total;
-    int tweets;
-    int pos;
-    private void showWeather(){
 
+    /*private void showWeatherSent(){
+        negArea.setEditable(false);
+        try {
+            Class.forName(jdbcDriver);
+            conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
+            java.sql.Statement statement = conn.createStatement();
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+    }*/
+    int total;
+    static int tweetsTot;
+    int pos;
+    static int tweetsSent;
+    static int tweetsNeg;
+    String testE;
+    String date;
+    String temp;
+    String descr;
+    String sent;
+
+    private void showWeather(){
+        negArea.setEditable(false);
         try {
             Class.forName(jdbcDriver);
             conn = DriverManager.getConnection(dbURL, dbUser, dbPassWord);
@@ -377,15 +397,19 @@ public class ControllerAnalyst {
             while(rs.next()){
 
 
-                String testE = rs.getString("numberOfTweets");
-                String date = rs.getString("dateAdded");
-                String temp = rs.getString("temperature");
-                String descr = rs.getString("weatherDescription");
-                String sent = rs.getString("sent");
-                tweets = Integer.parseInt(testE);
-                total += tweets;
+                testE = rs.getString("numberOfTweets");
+                date = rs.getString("dateAdded");
+                temp = rs.getString("temperature");
+                descr = rs.getString("weatherDescription");
+                sent = rs.getString("sent");
+                tweetsSent = Integer.parseInt(sent);
+                tweetsTot = Integer.parseInt(testE);
+                tweetsNeg = (tweetsTot - tweetsSent);
+                total += tweetsTot;
                 System.out.println("Date: " + date + " - Messages: " + testE + " Temperature: " + temp + " " + descr + " " + sent);
 
+                showSentData = "Date added: " + date + "\n\rTemperature: " + temp + "\n\rWeather Description: " + descr + "\n\rNumber of messages: " + testE + "\n\rNumber of positive messages: " + sent + "\n\r \n\r";
+                negArea.appendText(showSentData);
                 //String test = rs.getString("positief");
                 //ystem.out.println(test);
 
